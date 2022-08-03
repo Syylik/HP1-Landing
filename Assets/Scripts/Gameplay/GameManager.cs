@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text coinsText;
     [SerializeField] private GameObject[] allSkins;
 
+    [SerializeField] private AudioSource buttonSound;
+    [SerializeField] private AudioSource coinCollectSound;
+
     [SerializeField] private GameObject losePanel;
     public static GameManager instance { get; private set; }
     private void Awake() => instance = this;
@@ -18,8 +21,15 @@ public class GameManager : MonoBehaviour
     }
     public void AddCoin()
     {
+        coinCollectSound.pitch = Random.Range(0.9f, 1.1f);
+        Destroy(Instantiate(coinCollectSound.gameObject, transform.position, Quaternion.identity), 2f);
         coins++;
         coinsText.text = coins.ToString();
+    }
+    public void PlayButtonSound()
+    {
+        buttonSound.pitch = Random.Range(0.9f, 1.1f);
+        buttonSound.Play();
     }
     public void Lose()
     {

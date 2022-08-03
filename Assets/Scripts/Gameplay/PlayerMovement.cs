@@ -59,9 +59,5 @@ public class PlayerMovement : MonoBehaviour
 
         transform.localScale = Scale;
     }
-    private void Flip()
-    {
-        
-    }
     public void PlayDieAnim() => anim.SetTrigger(dieAnim);
 }

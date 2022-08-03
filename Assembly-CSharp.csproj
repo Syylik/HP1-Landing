@@ -60,22 +60,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraConstantWidth.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Coin.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\ShieldBonus.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\MovingObject.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\SceneFade.cs" />
-    <Compile Include="Assets\Scripts\Gameplay\GameManager.cs" />
-    <Compile Include="Assets\Scripts\DontDestroyOnLoad.cs" />
-    <Compile Include="Assets\Scripts\Gameplay\Spawner.cs" />
-    <Compile Include="Assets\Scripts\Gameplay\Meteor.cs" />
-    <Compile Include="Assets\Scripts\Gameplay\MovingObject.cs" />
-    <Compile Include="Assets\Scripts\Gameplay\Player.cs" />
-    <Compile Include="Assets\Scripts\Gameplay\Coin.cs" />
-    <Compile Include="Assets\Scripts\Utils.cs" />
     <Compile Include="Assets\Scripts\Shop.cs" />
-    <Compile Include="Assets\Scripts\Skin.cs" />
-    <Compile Include="Assets\Scripts\Gameplay\ShieldBonus.cs" />
-    <Compile Include="Assets\Scripts\Gameplay\BgMover.cs" />
+    <Compile Include="Assets\Scripts\Utils.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Cloud.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Meteor.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\BgMover.cs" />
+    <Compile Include="Assets\Scripts\Skin.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Spawner.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Player.cs" />
+    <Compile Include="Assets\Scripts\DontDestroyOnLoad.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -713,6 +713,9 @@
     <Reference Include="Unity.2D.Path.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
@@ -721,9 +724,6 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Meteor : MonoBehaviour
 {
+    [SerializeField] private Sprite[] meteorVariations;
 
 	[SerializeField, Range(-15f, 15f)] private float moveSpeed = 5f;
 	[SerializeField, Range(5f, 50f)] private float frequency = 20f;
@@ -13,6 +14,7 @@ public class Meteor : MonoBehaviour
 	private Vector3 pos, localScale;
 	private void Start()
 	{
+		GetComponentInChildren<SpriteRenderer>().sprite = Utils.GetRandInArray(meteorVariations);
 		Destroy(gameObject, timeToDestroy);
 		pos = transform.position;
 		localScale = transform.localScale;

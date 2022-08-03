@@ -46,7 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd4342b27a020554ab84349fee3e81cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  meteorVariations:
+  - {fileID: 21300000, guid: af16e566b087bf24cb34769078010a42, type: 3}
+  - {fileID: 21300000, guid: 24bd4de19270f334b8b07169bb1a41db, type: 3}
+  - {fileID: 21300000, guid: 8496976b6e2ea484faeb1be127603b03, type: 3}
+  moveSpeed: 5.1
   frequency: 6
   magnitude: 1
   timeToDestroy: 10
