@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEditor;
 
-[RequireComponent(typeof(Collider2D))]
 public class MovingObject : MonoBehaviour
 {
     [Range(-25f, 25f)] public float moveSpeed = 10f;

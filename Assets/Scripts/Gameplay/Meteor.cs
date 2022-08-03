@@ -48,15 +48,13 @@ public class Meteor : MonoBehaviour
 
 	void MoveRight()
 	{
-		pos += transform.right * Time.deltaTime * moveSpeed;
+		pos += new Vector3(1, 1, 0) * Time.deltaTime * moveSpeed;
 		transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
-		transform.Translate(Vector2.up * moveSpeed);
 	}
 	void MoveLeft()
 	{
-		pos -= transform.right * Time.deltaTime * moveSpeed;
+		pos += new Vector3(-1, 1, 0) * Time.deltaTime * moveSpeed;
 		transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
-		transform.Translate(Vector2.up * moveSpeed);
 	}
 
 }

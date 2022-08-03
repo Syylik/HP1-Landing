@@ -13,15 +13,11 @@ public class Spawner : MonoBehaviour
     private IEnumerator SpawnCoroutine()
     {
         yield return new WaitForSeconds(Random.Range(minSpawnTime, maxSpawnTime));
-        var objectToSpawn = GetRandInArray(objectsToSpawn);
+        var objectToSpawn = Utils.GetRandInArray(objectsToSpawn);
         var spawnPoint = transform.position;
-        spawnPoint = GetRandInArray(spawnPoints).position;
+        spawnPoint = Utils.GetRandInArray(spawnPoints).position;
         if (canSpawn) Instantiate(objectToSpawn, spawnPoint, objectToSpawn.transform.rotation);
         StartCoroutine(SpawnCoroutine());
-    }
-    public static T GetRandInArray<T>(T[] array)
-    {
-        return array[Random.Range(0, array.Length)];
     }
 }
 [CustomEditor(typeof(Spawner))]

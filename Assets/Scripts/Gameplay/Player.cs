@@ -9,30 +9,48 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Image shieldTimeImage;
     [SerializeField] private GameObject shield;
+    private bool shieldEnabled = false;
+
     private void Update()
     {
+        shieldTimeLeft -= Time.deltaTime;
         if(shieldTimeLeft > 0) shieldTimeImage.fillAmount = shieldTimeLeft / shieldTime;
-        else shieldTimeImage.gameObject.SetActive(false);
+        else
+        {
+            shieldEnabled = false;
+            shieldTimeImage.gameObject.SetActive(false);
+            shield.SetActive(false);
+        }
     }
     private IEnumerator Die()
     {
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<PlayerMovement>().PlayDieAnim();
         yield return new WaitForSeconds(1.1f);
-        gameObject.SetActive(false);
         GameManager.instance.Lose();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.TryGetComponent<Meteor>(out Meteor meteor))
         {
-            meteor.Explode();
-            StartCoroutine(Die());
+            if (!shieldEnabled)
+            {
+                meteor.Explode();
+                StartCoroutine(Die());
+            }
         }
         else if(collision.TryGetComponent<Coin>(out Coin coin)) coin.Collect();
-        else if(collision.TryGetComponent<Shield>(out Shield shieldComponent))
+        else if(collision.TryGetComponent<ShieldBonus>(out ShieldBonus shieldBonus))
         {
-            shieldTimeLeft = shieldTime;
-            shieldTimeImage.gameObject.SetActive(true);
-            shieldComponent.CollectBonus();
+            if (!shieldEnabled)
+            {
+                shieldEnabled = true;
+                shieldTimeLeft = shieldTime;
+                shieldTimeImage.gameObject.SetActive(true);
+                shield.SetActive(true);
+            }
+            else shieldTimeLeft = shieldTime;
+            shieldBonus.CollectBonus();
         }
     }
 }

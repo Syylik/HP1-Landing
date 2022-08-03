@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c444647804022d24a92dc6d59d5d12d0, type: 3}
   m_Name: YellowPl
   m_EditorClassIdentifier: 
+  skinName: Yellow
   sprite: {fileID: 21300000, guid: 08f437706c38fa949a0d44e1f3ff1c83, type: 3}
   price: 30
   isBought: 0

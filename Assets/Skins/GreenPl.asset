@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c444647804022d24a92dc6d59d5d12d0, type: 3}
   m_Name: GreenPl
   m_EditorClassIdentifier: 
+  skinName: Green
   sprite: {fileID: 21300000, guid: 03dda1cbacc097d48b615bd1450822ae, type: 3}
   price: 10
   isBought: 0
